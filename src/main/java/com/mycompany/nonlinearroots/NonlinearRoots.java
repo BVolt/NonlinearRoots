@@ -1,15 +1,6 @@
 package com.mycompany.nonlinearroots;
 import java.io.*;
 
-/* Tasks
--Get A B Graphs
--Write divergence test
--Report on [a, b], xN, [xN, xN-1] starting points, convergence of the root, observation, and data types
--Grab table snaps
--Get Graphs for tables
-
--Report Order Code -> Discussion -> AB Graphs -> Root Discussion -> Table Graph -> Tables
- */
 
 public class NonlinearRoots {
     private static BufferedWriter outFile;
@@ -29,8 +20,8 @@ public class NonlinearRoots {
         //Function A - Root 1
         applyMethod("Bisection", "A", 1, A, 0, 1,  0, 0, A);
         applyMethod("Falsi", "A", 1, A, 0, 1,  0, 0, A);
-        applyMethod("Newton", "A", 1, A, 0, 1, 1, 0, Aprime);
-        applyMethod("Secant", "A", 1, A, 0, 1,  0, 1, Aprime);
+        applyMethod("Newton", "A", 1, A, 0, 1, .5, 0, Aprime);
+        applyMethod("Secant", "A", 1, A, 0, 1,  0, .5, Aprime);
 
         //Function A - Root 2
         applyMethod("Bisection", "A", 2, A, 1, 2,  0, 0, A);
@@ -48,7 +39,7 @@ public class NonlinearRoots {
         applyMethod("Bisection", "B", 1, B, 120, 130,  0, 0, A);
         applyMethod("Falsi", "B", 1, B, 120, 130,  0, 0, B);
         applyMethod("Newton", "B", 1, B, 120, 130,  130, 0, Bprime);
-        applyMethod("Secant", "B", 1, B, 120, 130,  127, 130, Bprime);
+        applyMethod("Secant", "B", 1, B, 120, 130,  120, 130, Bprime);
     }
     
     public static void applyMethod(String mName, String fName, int rNum, Function f, double a, double b, double Xn, double Xnm1, Function fp){
