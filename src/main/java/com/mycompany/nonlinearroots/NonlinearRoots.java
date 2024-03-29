@@ -1,7 +1,7 @@
 package com.mycompany.nonlinearroots;
 import java.io.*;
 
-//1
+//1  
 public class NonlinearRoots {
     private static BufferedWriter outFile;
 
